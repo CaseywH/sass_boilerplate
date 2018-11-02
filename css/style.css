@@ -1,16 +1,58 @@
-/* Basic definitions for entire project */
-* {
+/*
+  0-600 Phone
+  600-900 tablet portrait
+  900-1200 tablet landscape
+  1200-1800 normal style
+  1800+ Big desktop
+  $breakpoint argument choices
+  - phone
+  - tab-port
+  - tab-land
+  - big-desk
+  
+  
+  ORDER: Base + typograpyh > general layout + grid
+  */
+/*******************************/
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
-  font-family: "Courier New", Courier, monospace;
+  box-sizing: border-box;
+  padding: 3rem; }
+  @media (max-width: 56.25em) {
+    body {
+      padding: 0; } }
+
+body {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-weight: 400;
   font-size: 62.5%;
   line-height: 1.7; }
 
-/*******************************/
+.heading-primary {
+  color: black; }
+  .heading-primary--main {
+    font-size: 3rem; }
+  .heading-primary--sub {
+    font-size: 1.75rem; }
+
 /*******************************/
 /*******************************/
 /*******************************/
