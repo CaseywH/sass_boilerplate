@@ -1,12 +1,29 @@
-/* Basic definitions for entire project */
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
+}
+html {
+  // this defines the reference point for 1rem i.e. 10px
+  font-size: 62.5%; //1rem == 10px 10px/16px ==62.5%
+
+  @include respond(tab-land) {
+    font-size: 56.25%; // 1rem = 9px, 9/16 = 56.25
+  }
+  @include respond(tab-port) {
+    font-size: 50%; //1rem == 8px, 8/16 = 50%
+  }
+  //phone not needed same as tab-port
+  @include respond(big-desktop) {
+    font-size: 75%;
+  }
 }
 body {
-  font-family: "Courier New", Courier, monospace;
-  font-weight: 400;
-  font-size: 62.5%;
-  line-height: 1.7;
+  box-sizing: border-box;
+  padding: 3rem;
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }
